@@ -20,10 +20,16 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>
-                        <a class="btn btn-secondary" href="{{ route('admin.projects.show', $project->slug) }}"><i class="fa-regular fa-eye"></i></a>
+                        <a class="ms-btn btn btn-info" href="{{ route('admin.projects.show', $project->slug) }}"><i class="fa-regular fa-eye"></i></a>
+                        <a class="ms-btn btn btn-warning" href=""><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a class="ms-btn btn btn-danger" href=""><i class="fa-regular fa-trash-can"></i></a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    <div class="add-btn-container d-flex align-items-center justify-content-center">
+        <a class="ms-btn ms-add-btn btn btn-success" href="{{ route('admin.projects.create', $project->slug) }}"><i class="fa-regular fa-plus"></i></a>
+    </div>
 @endsection
