@@ -33,6 +33,14 @@
 
 .ms-add-btn {
     width: 80%;
+    background-color: #1dac69;
+    box-shadow: 1px 1px 0 black;
+}
+
+.ms-add-btn:hover {
+    background-color: #28c97d;
+    transform: translate(1px, 1px);
+    box-shadow: none;
 }
 
 .edit-title {
