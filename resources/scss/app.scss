@@ -17,10 +17,14 @@
     border: 1px solid grey;
     padding: 5px 0;
     width: 45px;
+    color: #141414;
+    text-shadow: 1px 1px white;
 }
 
 .ms-btn:hover {
     border: 1px solid lightgrey;
+    color: white;
+    text-shadow: 1px 1px #141414;
 }
 
 .add-btn-container {
