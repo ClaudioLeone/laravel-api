@@ -1,5 +1,56 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+    background-color: #5e6066;
+}
+
+.ms-undo-btn {
+    color: white;
+    background-color: #d15a5a;
+    border: 2px solid #717171;
+    &:hover {
+        color: #eb2a2a;
+        border: 2px solid #eb2a2a;
+    }
+}
+
+.ms-confirm-btn {
+    color: white;
+    background-color: #4fb887;
+    border: 2px solid #717171;
+    &:hover {
+        color: #2bcc81;
+        border: 2px solid #2bcc81;
+    }
+}
+
+.ms-info-clr {
+    color: #141414;
+    background-color: #6e98d7;
+    &:hover {
+        color: #0d6efd;
+        border: 2px solid #0d6efd;
+    }
+}
+
+.ms-edit-clr {
+    color: #141414;
+    background-color: #f0f281;
+    &:hover {
+        color: #eaed3d;
+        border: 2px solid #eaed3d;
+    }
+}
+
+.ms-delete-clr {
+    color: #141414;
+    background-color: #d15a5a;
+    &:hover {
+        color: #eb2a2a;
+        border: 2px solid #eb2a2a;
+    }
+}
+
 .card-link {
     text-decoration: none;
     font-weight: bold;
@@ -14,17 +65,14 @@
 }
 
 .ms-btn{
-    border: 1px solid grey;
+    border: 2px solid grey;
     padding: 5px 0;
     width: 45px;
-    color: #141414;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 0 white;
 }
 
 .ms-btn:hover {
-    border: 1px solid lightgrey;
-    color: white;
-    text-shadow: 1px 1px #141414;
+    text-shadow: 1px 0 #141414;
 }
 
 .add-btn-container {
@@ -32,15 +80,18 @@
 }
 
 .ms-add-btn {
+    text-shadow: 1px 0 #141414;
     width: 80%;
-    background-color: #1dac69;
+    color: #ceffe7;
+    background-color: #4fb887;
     box-shadow: 1px 1px 0 black;
-}
-
-.ms-add-btn:hover {
-    background-color: #28c97d;
-    transform: translate(1px, 1px);
-    box-shadow: none;
+    &:hover {
+        background-color: #141414;
+        transform: translate(1px, 1px);
+        color: #4fb887;
+        box-shadow: none;
+        font-weight: bold;
+    }
 }
 
 .edit-title {
