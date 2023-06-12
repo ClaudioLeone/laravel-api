@@ -16,7 +16,7 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $types = ['Documento generico', 'Videogioco', 'Tesi universitaria', 'Libro', 'Sito web'];
+        $types = ['Applicazione web', 'Blog', 'Foglio universitario', 'Documentazione', 'Sito web'];
         foreach ($types as $type) {
             $new_type = new Type();
             $new_type->name = $type;

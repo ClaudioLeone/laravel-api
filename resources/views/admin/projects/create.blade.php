@@ -18,12 +18,21 @@
         <form class="mb-2" action="{{ route('admin.projects.store') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="title" class="form-label">Titolo</label>
+                <label for="title" class="form-label">Titolo:</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
             </div>
             <div class="mb-3">
-                <label for="content" class="form-label">Descrizione</label>
+                <label for="content" class="form-label">Descrizione:</label>
                 <textarea class="form-control" id="content" rows="3" name="content">{{ old('content') }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Tipo:</label>
+                <select class="form-select" id="type" name="type_id">
+                    <option selected>Scegli un tipo di progetto</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <button class="btn ms-confirm-btn" type="submit"><i class="fa-solid fa-star-of-life"></i> Crea</button>
         </form>
