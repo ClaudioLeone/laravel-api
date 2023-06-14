@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -19,6 +20,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        // $projects = Project::where('user_id', Auth::id()->get());
         $projects = Project::all();
         return view('admin.projects.index', compact('projects'));
     }
@@ -44,6 +46,7 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $data['slug'] = Str::slug($data['title']);
+        $data['user_id'] = Auth::user()->id;
         $project = Project::create($data);
         return redirect()->route('admin.projects.index');
     }
@@ -56,6 +59,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        // if($project->user_id !== Auth::id()) {
+        //     abort(403, 'Unauthorized');
+        // }
         return view('admin.projects.show', compact('project'));
     }
 

@@ -20,6 +20,8 @@
                 @method('DELETE')
                 <button class="btn ms-undo-btn" href="{{ route('admin.projects.destroy', $project->slug) }}"><i class="fa-regular fa-trash-can"></i> Cancella</button>
             </form>
+
+            <h6 class="text-warning text-end"><em>Creato da: {{ $project->user ? $project->user->name: 'Utente Sconosciuto' }}</em></h6>  
         </div>
     </div>
 @endsection
