@@ -28,9 +28,9 @@
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo:</label>
                 <select class="form-select" id="type" name="type_id">
-                    <option selected>Scegli un tipo di progetto</option>
+                    <option value="">Scegli un tipo di progetto</option>
                     @foreach ($types as $type)
-                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        <option @selected(old('type_id') == $type->id) value="{{ $type->id }}">{{ $type->name }}</option>
                     @endforeach
                 </select>
             </div>

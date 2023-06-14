@@ -26,6 +26,15 @@
                 <label for="content" class="form-label">Descrizione</label>
                 <textarea class="form-control" id="content" rows="3" name="content">{{ old('content', $project->content) }}</textarea>
             </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Tipo:</label>
+                <select class="form-select" id="type" name="type_id">
+                    <option value="">Scegli un tipo di progetto</option>
+                    @foreach ($types as $type)
+                        <option @selected($type->id === $project->type?->id) value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <button class="btn ms-confirm-btn" type="submit"><i class="fa-solid fa-check-double"></i> Conferma modifiche</button>
         </form>
     
