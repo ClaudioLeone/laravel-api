@@ -21,7 +21,14 @@
                 <button class="btn ms-undo-btn" href="{{ route('admin.projects.destroy', $project->slug) }}"><i class="fa-regular fa-trash-can"></i> Cancella</button>
             </form>
 
-            <h6 class="text-warning text-end"><em>Creato da: {{ $project->user ? $project->user->name: 'Utente Sconosciuto' }}</em></h6>  
+            <div class="d-flex align-items-center justify-content-between mt-4">
+                <h6 class="text-warning d-inline-block text-end"><em>Creato da: {{ $project->user ? $project->user->name: 'Utente Sconosciuto' }}</em></h6>
+                @forelse ($project->technologies as $technology)
+                    <span class="badge rounded-pill text-bg-info">{{ $technology }}</span>
+                @empty
+                    <span class="badge rounded-pill text-bg-danger">Nessuna tecnologia selezionata</span>
+                @endforelse                
+            </div>  
         </div>
     </div>
 @endsection
