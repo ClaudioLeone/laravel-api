@@ -23,11 +23,13 @@
 
             <div class="d-flex align-items-center justify-content-between mt-4">
                 <h6 class="text-warning d-inline-block text-end"><em>Creato da: {{ $project->user ? $project->user->name: 'Utente Sconosciuto' }}</em></h6>
-                @forelse ($project->technologies as $technology)
-                    <span class="badge rounded-pill text-bg-info">{{ $technology }}</span>
-                @empty
-                    <span class="badge rounded-pill text-bg-danger">Nessuna tecnologia selezionata</span>
-                @endforelse                
+                <div class="d-inline-block">
+                    @forelse ($project->technologies as $technology)
+                        <span class="badge rounded-pill text-bg-info">{{ $technology->name }}</span>
+                    @empty
+                        <span class="badge rounded-pill text-bg-danger">Nessuna tecnologia selezionata</span>
+                    @endforelse  
+                </div>              
             </div>  
         </div>
     </div>
