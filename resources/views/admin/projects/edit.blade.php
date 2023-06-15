@@ -35,6 +35,19 @@
                     @endforeach
                 </select>
             </div>
+            <div class="mb-4">
+                <span>Seleziona le tecnologie per il tuo progetto:</span>
+                <div class="d-flex flex-wrap">
+                    @foreach ($technologies as $technology)
+                        <div class="form-check mt-2 me-4">
+                            <input class="form-check-input" type="checkbox" name="technologies[]" value="{{ $technology->id }}" id="tech-{{ $technology->id }}" @checked($project->technologies->contains($technology))>
+                            <label class="form-check-label" for="tech-{{ $technology->id }}">
+                                {{ $technology->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
             <button class="btn ms-confirm-btn" type="submit"><i class="fa-solid fa-check-double"></i> Conferma modifiche</button>
         </form>
     
